@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- SEO Básico -->
+   <title>Sesiones de Visualización Guiada | Daniel Machuca</title>
+   <meta name="description" content="Sesiones profesionales de Visualización Guiada con el psicólogo Daniel Machuca. Modalidad presencial en CDMX y videollamada por WhatsApp. Claridad mental, regulación emocional y alineación de metas.">
+   <meta name="keywords" content="visualización guiada, psicología, CDMX, sesiones de visualización, Daniel Machuca, terapia online, regulación emocional">
+   <meta name="author" content="Daniel Machuca">
+   <meta name="robots" content="index, follow">
+
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://tusitio.com/">
+   <meta property="og:title" content="Sesiones de Visualización Guiada | Daniel Machuca">
+   <meta property="og:description" content="Transforma tu mente e influye tu mundo. Sesiones de visualización guiada presenciales en CDMX y por WhatsApp Video.">
+   <meta property="og:image" content="https://tusitio.com/og-image.jpg">
+   <meta property="og:locale" content="es_MX">
+
+   <!-- Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Sesiones de Visualización Guiada | Daniel Machuca">
+   <meta name="twitter:description" content="Sesiones profesionales de Visualización Guiada. Presencial en CDMX y videollamada.">
+   <meta name="twitter:image" content="https://tusitio.com/og-image.jpg">
+
+   <!-- Favicon (puedes reemplazarlo por el tuyo) -->
+   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+   <!-- Tailwind CSS CDN -->
+   <script src="https://cdn.tailwindcss.com"></script>
+
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+   <!-- FontAwesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   fontFamily: {
+                       sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                       serif: ['"Playfair Display"', 'serif'],
+                   },
+                   colors: {
+                       brand: {
+                           dark: '#0B0F19',
+                           card: '#131C2E',
+                           accent: '#D4AF37',
+                           accentHover: '#E5C158',
+                           muted: '#94A3B8'
+                       }
+                   }
+               }
+           }
+       }
+   </script>
+
+   <style>
+       /* Transición suave del menú móvil */
+       #mobile-menu {
+           transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+       }
+       #mobile-menu.closed {
+           max-height: 0;
+           opacity: 0;
+           overflow: hidden;
+       }
+       #mobile-menu.open {
+           max-height: 400px;
+           opacity: 1;
+       }
+   </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-brand-dark">
+
+   <!-- HEADER / NAVBAR -->
+   <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-slate-800/80">
+       <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+           <!-- Logo -->
+           <a href="#" class="flex items-center space-x-3" aria-label="Inicio - Daniel Machuca">
+               <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-accent to-amber-600 flex items-center justify-center text-brand-dark font-serif font-bold text-xl shadow-lg shadow-brand-accent/20">
+                   DM
+               </div>
+               <div>
+                   <span class="block font-serif font-bold text-lg tracking-wide text-white">Daniel Machuca</span>
+                   <span class="block text-xs uppercase tracking-widest text-brand-accent font-medium">Psicología & Visualización</span>
+               </div>
+           </a>
+
+           <!-- Navegación Desktop -->
+           <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300" aria-label="Navegación principal">
+               <a href="#beneficios" class="hover:text-brand-accent transition">Beneficios</a>
+               <a href="#modalidades" class="hover:text-brand-accent transition">Modalidades</a>
+               <a href="#sobre-mi" class="hover:text-brand-accent transition">Acerca de Mí</a>
+               <a href="#contacto" class="hover:text-brand-accent transition">Contacto</a>
+           </nav>
+
+           <!-- Botón WhatsApp Desktop + Hamburger -->
+           <div class="flex items-center space-x-3">
+               <a href="https://wa.me/525627110600?text=Hola%20Daniel,%20me%20interesa%20información%20sobre%20las%20sesiones%20de%20visualización%20guiada."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-lg shadow-emerald-900/30"
+                  aria-label="Agendar cita por WhatsApp">
+                   <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+                   <span>Agendar Cita</span>
+               </a>
+
+               <!-- Botón Hamburguesa (solo móvil) -->
+               <button id="menu-toggle"
+                       class="md:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-brand-card border border-slate-700 text-slate-200 hover:text-brand-accent transition"
+                       aria-label="Abrir menú de navegación"
+                       aria-expanded="false"
+                       aria-controls="mobile-menu">
+                   <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+               </button>
+           </div>
+       </div>
+
+       <!-- Menú Móvil -->
+       <div id="mobile-menu" class="md:hidden closed bg-brand-dark/95 border-t border-slate-800/80">
+           <nav class="px-6 py-5 flex flex-col space-y-4 text-base font-medium text-slate-300" aria-label="Navegación móvil">
+               <a href="#beneficios" class="hover:text-brand-accent transition py-1 mobile-link">Beneficios</a>
+               <a href="#modalidades" class="hover:text-brand-accent transition py-1 mobile-link">Modalidades</a>
+               <a href="#sobre-mi" class="hover:text-brand-accent transition py-1 mobile-link">Acerca de Mí</a>
+               <a href="#contacto" class="hover:text-brand-accent transition py-1 mobile-link">Contacto</a>
+
+               <a href="https://wa.me/525627110600?text=Hola%20Daniel,%20me%20interesa%20información%20sobre%20las%20sesiones%20de%20visualización%20guiada."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-2 inline-flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-5 py-3 rounded-xl transition">
+                   <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+                   <span>Agendar por WhatsApp</span>
+               </a>
+           </nav>
+       </div>
+   </header>
+
+   <!-- HERO SECTION -->
+   <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+       <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+           <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-card border border-slate-700/60 text-brand-accent text-xs font-semibold uppercase tracking-widest mb-6 shadow-sm">
+               <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+               <span>Desbloquea tu potencial interno</span>
+           </div>
+
+           <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+               Transforma tu Mente, <br>
+               <span class="bg-gradient-to-r from-brand-accent via-amber-200 to-amber-500 bg-clip-text text-transparent italic font-normal">Influye tu Mundo</span>
+           </h1>
+
+           <p class="max-w-2xl mx-auto text-lg sm:text-xl text-brand-muted mb-10 font-light leading-relaxed">
+               Sesiones profesionales de <strong class="text-white font-medium">Visualización Guiada</strong> orientadas a reprogramar patrones mentales, reducir el estrés y potenciar tus decisiones personales y profesionales.
+           </p>
+
+           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+               <a href="https://wa.me/525627110600?text=Hola%20Daniel,%20quisiera%20agendar%20una%20sesión%20de%20visualización%20guiada."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-brand-accent hover:bg-brand-accentHover text-brand-dark font-bold text-base px-8 py-4 rounded-2xl transition shadow-xl shadow-brand-accent/20 transform hover:-translate-y-0.5">
+                   <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i>
+                   <span>Consultar al WhatsApp 56 2711 0600</span>
+               </a>
+               <a href="#modalidades" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-brand-card hover:bg-slate-800 text-slate-200 font-medium text-base px-6 py-4 rounded-2xl border border-slate-700 transition">
+                   <span>Ver Modalidades</span>
+                   <i class="fa-solid fa-arrow-down text-xs text-brand-accent" aria-hidden="true"></i>
+               </a>
+           </div>
+
+           <!-- Imagen Hero (sin lazy) -->
+           <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden border border-slate-700/60 shadow-2xl shadow-black/50 mb-12">
+               <img src="watermarked_img_7282340262599597145.jpg"
+                    alt="Sesión de Visualización Guiada con Daniel Machuca"
+                    class="w-full h-72 sm:h-96 object-cover object-center filter brightness-95"
+                    width="800" height="500">
+           </div>
+
+           <!-- Badges -->
+           <div class="grid grid-cols-2 gap-4 max-w-lg mx-auto text-sm text-slate-400 border-t border-slate-800/80 pt-8">
+               <div class="flex items-center justify-center space-x-2">
+                   <i class="fa-solid fa-location-dot text-brand-accent" aria-hidden="true"></i>
+                   <span>Modalidad Presencial (CDMX)</span>
+               </div>
+               <div class="flex items-center justify-center space-x-2">
+                   <i class="fa-solid fa-video text-brand-accent" aria-hidden="true"></i>
+                   <span>Videollamada por WhatsApp</span>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- BENEFICIOS -->
+   <section id="beneficios" class="py-20 bg-brand-card/50 border-y border-slate-800/60">
+       <div class="max-w-6xl mx-auto px-6">
+           <div class="text-center max-w-2xl mx-auto mb-16">
+               <h2 class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-3">Neuroplasticidad y Enfoque</h2>
+               <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">¿Qué logramos a través de la visualización?</h3>
+           </div>
+
+           <div class="grid md:grid-cols-3 gap-8 items-center mb-16">
+               <!-- Tarjeta 1 -->
+               <div class="bg-brand-card p-8 rounded-3xl border border-slate-700/50 hover:border-brand-accent/50 transition group h-full">
+                   <div class="w-14 h-14 rounded-2xl bg-brand-dark flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:scale-110 transition">
+                       <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                   </div>
+                   <h4 class="font-serif text-xl font-bold text-white mb-3">Claridad Mental y Calma</h4>
+                   <p class="text-brand-muted text-sm leading-relaxed">
+                       Desactiva la respuesta automática al estrés y entrena a tu mente para encontrar soluciones lúcidas ante situaciones complejas.
+                   </p>
+               </div>
+
+               <!-- Tarjeta 2 -->
+               <div class="bg-brand-card p-8 rounded-3xl border border-slate-700/50 hover:border-brand-accent/50 transition group h-full">
+                   <div class="w-14 h-14 rounded-2xl bg-brand-dark flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:scale-110 transition">
+                       <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                   </div>
+                   <h4 class="font-serif text-xl font-bold text-white mb-3">Dirección y Metas</h4>
+                   <p class="text-brand-muted text-sm leading-relaxed">
+                       Alinea tu mundo interno con tus objetivos externos, construyendo escenarios de éxito detallados que facilitan la toma de acción.
+                   </p>
+               </div>
+
+               <!-- Tarjeta 3 -->
+               <div class="bg-brand-card p-8 rounded-3xl border border-slate-700/50 hover:border-brand-accent/50 transition group h-full">
+                   <div class="w-14 h-14 rounded-2xl bg-brand-dark flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:scale-110 transition">
+                       <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+                   </div>
+                   <h4 class="font-serif text-xl font-bold text-white mb-3">Regulación Emocional</h4>
+                   <p class="text-brand-muted text-sm leading-relaxed">
+                       Gestiona la ansiedad, disuelve bloqueos psicológicos profundos y fortalece tu autoconfianza desde un espacio de seguridad.
+                   </p>
+               </div>
+           </div>
+
+           <!-- Imagen 2 -->
+           <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-slate-700/60 shadow-xl">
+               <img src="watermarked_img_9548438559519783172.jpg"
+                    alt="Enfoque y calma interior a través de la visualización guiada"
+                    class="w-full h-64 sm:h-80 object-cover object-center filter brightness-95"
+                    loading="lazy"
+                    width="900" height="500">
+           </div>
+       </div>
+   </section>
+
+   <!-- MODALIDADES -->
+   <section id="modalidades" class="py-24 max-w-5xl mx-auto px-6">
+       <div class="text-center max-w-2xl mx-auto mb-16">
+           <h2 class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-3">Flexibilidad a tu medida</h2>
+           <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">Elige cómo deseas tomar tu sesión</h3>
+       </div>
+
+       <div class="grid md:grid-cols-2 gap-8">
+           <!-- Modalidad Presencial -->
+           <div class="bg-brand-card rounded-3xl p-8 sm:p-10 border border-slate-700/80 flex flex-col justify-between relative overflow-hidden">
+               <div class="absolute top-0 right-0 bg-brand-accent/10 text-brand-accent text-xs font-semibold px-4 py-2 rounded-bl-2xl border-l border-b border-brand-accent/20 z-10">
+                   CDMX
+               </div>
+               <div>
+                   <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-brand-accent flex items-center justify-center text-xl mb-6">
+                       <i class="fa-solid fa-building-user" aria-hidden="true"></i>
+                   </div>
+                   <h4 class="font-serif text-2xl font-bold text-white mb-4">Sesión Presencial</h4>
+                   <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                       Un espacio físico acondicionado, íntimo y libre de distracciones diseñado para propiciar la máxima desconexión y profundidad terapéutica.
+                   </p>
+
+                   <div class="rounded-2xl overflow-hidden mb-6 border border-slate-700/40">
+                       <img src="watermarked_img_10556836280751893629.jpg"
+                            alt="Consultorio para sesiones presenciales en Ciudad de México"
+                            class="w-full h-44 object-cover object-center"
+                            loading="lazy"
+                            width="600" height="300">
+                   </div>
+
+                   <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                       <li class="flex items-center space-x-3">
+                           <i class="fa-solid fa-check text-brand-accent" aria-hidden="true"></i>
+                           <span>Ambiente guiado personalizado</span>
+                       </li>
+                       <li class="flex items-center space-x-3">
+                           <i class="fa-solid fa-check text-brand-accent" aria-hidden="true"></i>
+                           <span>Duración óptima por sesión</span>
+                       </li>
+                       <li class="flex items-center space-x-3">
+                           <i class="fa-solid fa-check text-brand-accent" aria-hidden="true"></i>
+                           <span>Previa cita confirmada</span>
+                       </li>
+                   </ul>
+               </div>
+               <a href="https://wa.me/525627110600?text=Hola%20Daniel,%20me%20interesa%20agendar%20una%20sesión%20presencial."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full text-center py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-600 transition">
+                   Agendar Presencial
+               </a>
+           </div>
+
+           <!-- Modalidad WhatsApp Video -->
+           <div class="bg-brand-card rounded-3xl p-8 sm:p-10 border border-brand-accent/40 flex flex-col justify-between relative overflow-hidden shadow-xl shadow-brand-accent/5">
+               <div class="absolute top-0 right-0 bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-4 py-2 rounded-bl-2xl border-l border-b border-emerald-500/30 z-10">
+                   A distancia
+               </div>
+               <div>
+                   <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
+                       <i class="fa-solid fa-video" aria-hidden="true"></i>
+                   </div>
+                   <h4 class="font-serif text-2xl font-bold text-white mb-4">WhatsApp Video</h4>
+                   <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                       Toma tu sesión desde la comodidad de tu hogar, oficina o cualquier lugar privado con conexión estable a través de videollamada.
+                   </p>
+
+                   <div class="rounded-2xl overflow-hidden mb-6 border border-slate-700/40">
+                       <img src="watermarked_img_5823373213717101066.jpg"
+                            alt="Sesión de visualización guiada por videollamada de WhatsApp"
+                            class="w-full h-44 object-cover object-center"
+                            loading="lazy"
+                            width="600" height="300">
+                   </div>
+
+                   <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                       <li class="flex items-center space-x-3">
+                           <i class="fa-solid fa-check text-emerald-400" aria-hidden="true"></i>
+                           <span>Sin traslados ni complicaciones</span>
+                       </li>
+                       <li class="flex items-center space-x-3">
+                           <i class="fa-solid fa-check text-emerald-400" aria-hidden="true"></i>
+                           <span>Ideal para agendas ocupadas</span>
+                       </li>
+                       <li class="flex items-center space-x-3">
+                           <i class="fa-solid fa-check text-emerald-400" aria-hidden="true"></i>
+                           <span>Comunicación directa y segura</span>
+                       </li>
+                   </ul>
+               </div>
+               <a href="https://wa.me/525627110600?text=Hola%20Daniel,%20me%20interesa%20agendar%20una%20sesión%20por%20WhatsApp%20Video."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full text-center py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition shadow-lg shadow-emerald-900/30">
+                   Agendar por Video
+               </a>
+           </div>
+       </div>
+   </section>
+
+   <!-- SOBRE EL FACILITADOR -->
+   <section id="sobre-mi" class="py-20 bg-brand-card/40 border-t border-slate-800/60">
+       <div class="max-w-4xl mx-auto px-6 text-center">
+           <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-accent to-amber-600 flex items-center justify-center text-brand-dark font-serif font-bold text-3xl mx-auto mb-6 shadow-xl shadow-brand-accent/20">
+               DM
+           </div>
+           <h2 class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-2">Facilitador Profesional</h2>
+           <h3 class="font-serif text-3xl font-bold text-white mb-6">Daniel Machuca</h3>
+           <p class="text-brand-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-light mb-8">
+               Psicólogo clínico enfocado en el desarrollo personal, herramientas de introspección avanzada y técnicas de visualización orientadas a potenciar los recursos cognitivos y emocionales de cada individuo.
+           </p>
+           <div class="inline-flex items-center space-x-2 text-sm text-slate-300 bg-brand-card px-5 py-2.5 rounded-xl border border-slate-700/60">
+               <i class="fa-solid fa-phone text-brand-accent" aria-hidden="true"></i>
+               <span>Contacto directo: <strong class="text-white">56 2711 0600</strong></span>
+           </div>
+       </div>
+   </section>
+
+   <!-- CTA FINAL -->
+   <section id="contacto" class="py-24 relative overflow-hidden">
+       <div class="absolute inset-0 bg-gradient-to-b from-brand-dark to-brand-card/80 pointer-events-none"></div>
+       <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Comienza tu proceso hoy</h2>
+           <p class="text-brand-muted text-lg max-w-xl mx-auto mb-10 font-light">
+               Da el primer paso hacia una mente más clara y un entorno alineado a tus objetivos. Escríbenos directamente para reservar tu espacio.
+           </p>
+
+           <a href="https://wa.me/525627110600?text=Hola%20Daniel,%20deseo%20más%20información%20para%20reservar%20mi%20sesión%20de%20visualización%20guiada."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center space-x-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-lg px-10 py-5 rounded-2xl transition shadow-2xl shadow-emerald-900/40 transform hover:-translate-y-0.5">
+               <i class="fa-brands fa-whatsapp text-3xl" aria-hidden="true"></i>
+               <span>WhatsApp: 56 2711 0600</span>
+           </a>
+       </div>
+   </section>
+
+   <!-- FOOTER -->
+   <footer class="py-8 bg-brand-dark border-t border-slate-800/80 text-center text-xs text-slate-500">
+       <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+           <p>&copy; 2026 Daniel Machuca. Todos los derechos reservados.</p>
+           <p class="text-brand-accent">Sesiones de Visualización Guiada &bull; Presencial y WhatsApp Video</p>
+       </div>
+   </footer>
+
+   <!-- Script del menú móvil -->
+   <script>
+       const menuToggle = document.getElementById('menu-toggle');
+       const mobileMenu = document.getElementById('mobile-menu');
+       const menuIcon = document.getElementById('menu-icon');
+       const mobileLinks = document.querySelectorAll('.mobile-link');
+
+       menuToggle.addEventListener('click', () => {
+           const isOpen = mobileMenu.classList.contains('open');
+
+           if (isOpen) {
+               mobileMenu.classList.remove('open');
+               mobileMenu.classList.add('closed');
+               menuIcon.classList.remove('fa-xmark');
+               menuIcon.classList.add('fa-bars');
+               menuToggle.setAttribute('aria-expanded', 'false');
+               menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+           } else {
+               mobileMenu.classList.remove('closed');
+               mobileMenu.classList.add('open');
+               menuIcon.classList.remove('fa-bars');
+               menuIcon.classList.add('fa-xmark');
+               menuToggle.setAttribute('aria-expanded', 'true');
+               menuToggle.setAttribute('aria-label', 'Cerrar menú de navegación');
+           }
+       });
+
+       // Cerrar menú al hacer clic en un enlace
+       mobileLinks.forEach(link => {
+           link.addEventListener('click', () => {
+               mobileMenu.classList.remove('open');
+               mobileMenu.classList.add('closed');
+               menuIcon.classList.remove('fa-xmark');
+               menuIcon.classList.add('fa-bars');
+               menuToggle.setAttribute('aria-expanded', 'false');
+               menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+           });
+       });
+   </script>
+</body>
+</html>
