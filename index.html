@@ -28,40 +28,17 @@
    <!-- Favicon (puedes reemplazarlo por el tuyo) -->
    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-   <!-- Tailwind CSS CDN -->
-   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- CSS estático generado con Tailwind (reemplaza el CDN) -->
+   <link rel="stylesheet" href="style.css">
 
-   <!-- Google Fonts -->
+<!-- Google Fonts -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
    <!-- FontAwesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-   <script>
-       tailwind.config = {
-           theme: {
-               extend: {
-                   fontFamily: {
-                       sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                       serif: ['"Playfair Display"', 'serif'],
-                   },
-                   colors: {
-                       brand: {
-                           dark: '#0B0F19',
-                           card: '#131C2E',
-                           accent: '#D4AF37',
-                           accentHover: '#E5C158',
-                           muted: '#94A3B8'
-                       }
-                   }
-               }
-           }
-       }
-   </script>
-
-   <style>
+<style>
        /* Transición suave del menú móvil */
        #mobile-menu {
            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
